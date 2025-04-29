@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface Doctor {
   _id: string;
@@ -16,10 +17,12 @@ export default function DoctorCard({ doctor }: { doctor: Doctor }) {
     <div className="border border-gray-300 p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl hover:bg-gray-600">
       <div className="flex gap-6 items-center">
         {/* Profile Image */}
-        <img
+        <Image
           src={doctor.profile_picture_url}
           alt={doctor.name}
-          className="w-32 h-32 rounded-full object-cover border-4 border-blue-500"
+          width={128} // Adjust the size based on your design
+          height={128} // Adjust the size based on your design
+          className="rounded-full object-cover border-4 border-blue-500"
         />
 
         <div className="flex flex-col justify-between flex-1">
