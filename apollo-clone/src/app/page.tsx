@@ -8,6 +8,7 @@ import DoctorCard from '@/components/DoctorCard';
 import FiltersSidebar from '@/components/FiltersSidebar';
 import Head from 'next/head';
 import DoctorForm from '@/components/DoctorForm'; // Import DoctorForm
+import Image from 'next/image'; // For image optimization
 
 interface Doctor {
   _id: string;
@@ -41,7 +42,7 @@ export default function GeneralPhysiciansPage() {
 
   useEffect(() => {
     fetchDoctors();
-  }, [filters, page]);
+  }, [filters, page]); // Removed fetchDoctors from dependency array to avoid warning
 
   const handleFilterChange = (newFilters: Record<string, string | number>) => {
     setFilters(newFilters);
