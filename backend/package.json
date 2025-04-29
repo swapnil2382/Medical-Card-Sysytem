@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",        // This is the production start command
+    "dev": "nodemon app.js",       // This is for local development (using nodemon)
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
