@@ -45,7 +45,7 @@ const DoctorForm = () => {
             name="name"
             value={doctorData.name}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition  text-black"
             placeholder="Enter doctor's name"
             required
           />
@@ -58,7 +58,7 @@ const DoctorForm = () => {
             name="specialization"
             value={doctorData.specialization}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-black"
             placeholder="Enter specialization"
             required
           />
@@ -71,7 +71,7 @@ const DoctorForm = () => {
             name="experience"
             value={doctorData.experience}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition  text-black"
             placeholder="Enter experience"
             required
           />
@@ -84,7 +84,7 @@ const DoctorForm = () => {
             name="consultation_fees"
             value={doctorData.consultation_fees}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-black"
             placeholder="Enter consultation fees"
             required
           />
@@ -97,7 +97,7 @@ const DoctorForm = () => {
             name="location"
             value={doctorData.location}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-black"
             placeholder="Enter location"
             required
           />
@@ -110,7 +110,7 @@ const DoctorForm = () => {
             name="profile_picture_url"
             value={doctorData.profile_picture_url}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-black"
             placeholder="Enter profile picture URL"
             required
           />
@@ -123,7 +123,7 @@ const DoctorForm = () => {
             name="rating"
             value={doctorData.rating}
             onChange={handleChange}
-            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-black"
             placeholder="Enter rating"
             required
           />

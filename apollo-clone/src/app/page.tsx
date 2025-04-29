@@ -1,14 +1,13 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react'; // Added useCallback
+import { useEffect, useState } from 'react';
 import { NextSeo } from 'next-seo';
 import axios from 'axios';
 import Header from '@/components/Header';
 import DoctorCard from '@/components/DoctorCard';
 import FiltersSidebar from '@/components/FiltersSidebar';
 import Head from 'next/head';
-import DoctorForm from '@/components/DoctorForm';
-// Removed: import Image from 'next/image'; // ❌ Not needed since you don't use it
+import DoctorForm from '@/components/DoctorForm'; // Import DoctorForm
 
 interface Doctor {
   _id: string;
@@ -26,9 +25,9 @@ export default function GeneralPhysiciansPage() {
   const [filters, setFilters] = useState<Record<string, string | number>>({});
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
-  const [isAddingDoctor, setIsAddingDoctor] = useState<boolean>(false);
+  const [isAddingDoctor, setIsAddingDoctor] = useState<boolean>(false); // State to toggle form visibility
 
-  const fetchDoctors = useCallback(async () => {
+  const fetchDoctors = async () => {
     try {
       const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_BASE_URL}/doctors/list-doctor-with-filter`, {
         params: { ...filters, page, limit: 10 },
@@ -38,19 +37,19 @@ export default function GeneralPhysiciansPage() {
     } catch (error) {
       console.error('Failed to fetch doctors:', error);
     }
-  }, [filters, page]); // ✅ Now correctly using dependencies
+  };
 
   useEffect(() => {
     fetchDoctors();
-  }, [fetchDoctors]); // ✅ No warning now
+  }, [filters, page]);
 
   const handleFilterChange = (newFilters: Record<string, string | number>) => {
     setFilters(newFilters);
-    setPage(1);
+    setPage(1); // Reset page when filters change
   };
 
   const toggleAddDoctorForm = () => {
-    setIsAddingDoctor((prev) => !prev);
+    setIsAddingDoctor((prev) => !prev); // Toggle visibility of the form
   };
 
   return (
